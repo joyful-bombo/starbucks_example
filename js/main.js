@@ -23,7 +23,7 @@ window.addEventListener('scroll', _.throttle(function () {
     gsap.to(badgeEl, .6, {
       opacity: 0,
       display: 'none'
-    }); /* gsap.to(요소, 지속시간, 옵션); */
+    });
   } else {
     gsap.to(badgeEl, .6, {
       opacity: 1,
@@ -31,4 +31,12 @@ window.addEventListener('scroll', _.throttle(function () {
     });
   }
 }, 300));
-// lodash cdn _.throttle(function, ms)
+
+
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function(fadeEl, index) {
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * .7,
+    opacity: 1
+  });
+});
