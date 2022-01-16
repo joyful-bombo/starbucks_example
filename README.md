@@ -22,4 +22,16 @@
       <div class="btn btn--success"></div>
       <div class="btn btn--error"></div>
       ```
-    
+### 💡 lodash cdn
+  - ```JS
+    _.throttle(function, 시간(ms))
+    addEventListener('scroll', _.throttle(function() {
+    }, 300));
+    ```
+  - 어떤 작업 시에 계속해서 불러오는 것을 시간을 두어 불러오도록 명시하는 CDN(Contents Delivery Network)
+
+### 💡 gsap cdn
+  - ```JS
+    gsap.to(요소, 시간(s), {객체 요소});
+    ```
+  - CSS의 애니메이션 효과를 JS에서 제어하기 위한 cdn
