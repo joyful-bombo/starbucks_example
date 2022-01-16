@@ -35,3 +35,10 @@
     gsap.to(요소, 시간(s), {객체 요소});
     ```
   - CSS의 애니메이션 효과를 JS에서 제어하기 위한 cdn
+
+### 💡 swiper js
+  - ```JS
+    const swiper = new Swiper(선택자, 옵션)
+    ```
+  - Swipe 효과를 주기 위한 API
+  - 🔗[swiper JS](https://swiperjs.com/)
