@@ -16,22 +16,41 @@ searchInputEl.addEventListener('blur', function() {
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
+
+if(window.scrollY == 0){
+  toTopEl.style.display = 'none';
+}
+
 
 window.addEventListener('scroll', _.throttle(function () {
-  console.log('scroll!');
   if (window.scrollY > 500) {
+    toTopEl.style.display = 'inline-flex';
     gsap.to(badgeEl, .6, {
       opacity: 0,
       display: 'none'
+    });
+    // 버튼 보이기!
+    gsap.to(toTopEl, .4, {
+      x: 0
     });
   } else {
     gsap.to(badgeEl, .6, {
       opacity: 1,
       display: 'block'
     });
+    // 버튼 숨기기!
+    gsap.to(toTopEl, .4, {
+      x: 100
+    });
   }
 }, 300));
 
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, 1, {
+    scrollTo: 0
+  });
+});
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 fadeEls.forEach(function(fadeEl, index) {
